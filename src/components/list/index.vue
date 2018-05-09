@@ -1,85 +1,22 @@
 <template>
-    <div class="hello">
-        <h1></h1>
-        <h2>Essential Links</h2>
-        <ul>
-            <li>
-                <a
-                        href="https://vuejs.org"
-                        target="_blank"
-                >
-                    Core Docs
-                </a>
-            </li>
-            <li>
-                <a
-                        href="https://forum.vuejs.org"
-                        target="_blank"
-                >
-                    Forum
-                </a>
-            </li>
-            <li>
-                <a
-                        href="https://chat.vuejs.org"
-                        target="_blank"
-                >
-                    Community Chat
-                </a>
-            </li>
-            <li>
-                <a
-                        href="https://twitter.com/vuejs"
-                        target="_blank"
-                >
-                    Twitter
-                </a>
-            </li>
-            <br>
-            <li>
-                <a
-                        href="http://vuejs-templates.github.io/webpack/"
-                        target="_blank"
-                >
-                    Docs for This Template
-                </a>
-            </li>
-        </ul>
-        <h2>Ecosystem</h2>
-        <ul>
-            <li>
-                <a
-                        href="http://router.vuejs.org/"
-                        target="_blank"
-                >
-                    vue-router
-                </a>
-            </li>
-            <li>
-                <a
-                        href="http://vuex.vuejs.org/"
-                        target="_blank"
-                >
-                    vuex
-                </a>
-            </li>
-            <li>
-                <a
-                        href="http://vue-loader.vuejs.org/"
-                        target="_blank"
-                >
-                    vue-loader
-                </a>
-            </li>
-            <li>
-                <a
-                        href="https://github.com/vuejs/awesome-vue"
-                        target="_blank"
-                >
-                    awesome-vue
-                </a>
-            </li>
-        </ul>
+    <div class="list">
+        <div class="notes-list" v-for="(temp, key) in note" :key="key">
+            <!--<span>{{key}}</span>-->
+            <h3><span>name:</span><br>{{temp.name}}</h3>
+            <p><span>content:</span><br>{{temp.content}}</p>
+            <div class="add-comment">
+                <label>comment:</label>
+                <input type="text" placeholder="author"/>
+                <textarea placeholder="tour comment"></textarea>
+                <button type="button">post comment</button>
+            </div>
+            <div class="tool">
+                <router-link :to="{ name: 'EditNotes', params: { id: key }}" class="btn edit">edit this note</router-link>
+                <router-link :to="{ name: 'NotesMoreInfo', params: { id: key }}" class="btn more">more info</router-link>
+                <button type="button" v-on:click="delItem(key)" class="btn del" >del this el</button>
+            </div>
+        </div>
+        <button type="button" v-on:click="delAllNotes()" class="btn del">delete all notes</button>
     </div>
 </template>
 

@@ -1,7 +1,5 @@
-import page from './module/page'
-import room from './module/room/index'
+import notes from './modules/notes'
 
 export default {
-	page,
-	room
+  notes
 }

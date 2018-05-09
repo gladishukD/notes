@@ -1,13 +1,22 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <img src="./assets/logo.png">
+    <app-header class="app__header"></app-header>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Header from './components/header/index.vue'
 export default {
-  name: 'App'
+  name: 'app',
+  data () {
+    return {
+    }
+  },
+  components: {
+    appHeader: Header
+  }
 }
 </script>
 

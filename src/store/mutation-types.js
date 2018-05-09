@@ -1,1 +1,11 @@
-export const INIT_PAGE = 'INIT_PAGE'
+export const GET_LIST_NOTES = 'GET_LIST_NOTES'
+export const CREATE_ARRAY_NOTE = 'CREATE_ARRAY_NOTE'
+export const DEL_ALL_NOTES = 'DEL_ALL_NOTES'
+export const DEL_ITEM_NOTE = 'DEL_ITEM_NOTE'
+export const SAVE_NOTE = 'SAVE_NOTE'
+export const EDIT_NOTE = 'EDIT_NOTE'
+export const SAVE_EDIT_NOTE = 'SAVE_EDIT_NOTE'
+export const NOTE_DETAILS = 'NOTE_DETAILS'
+
+export const UPDATE_INPUT_VALUE = 'UPDATE_INPUT_VALUE'
+export const UPDATE_AREA_VALUE = 'UPDATE_AREA_VALUE'
