@@ -6,8 +6,11 @@
             <p>{{currentEl.content}}</p>
             <div class="wrap-coments">
                 <div class="coments" v-if="currentEl.coments.length > 0">
-                    <div class="coment" v-for="(temp, key) in currentEl.comment" :key="key">
-                        <span>{{temp.author}}</span>
+                    <div><b>comments:</b></div>
+                    <div class="coment" v-for="(temp, key) in currentEl.coments" :key="key">
+                        <span>автор: {{temp.author}}</span>
+                        <span>контент: {{temp.content}}</span>
+                        <span>дата створення: {{temp.created_at}}</span>
                     </div>
                 </div>
                 <div class="no-coments" v-else >

@@ -1,4 +1,5 @@
 import { mapGetters, mapMutations, mapActions } from 'vuex'
+import message from '../message/index.vue'
 import {
   UPDATE_INPUT_VALUE,
   UPDATE_AREA_VALUE,
@@ -7,7 +8,9 @@ import {
 
 export default {
   name: 'create-notes',
-  components: {},
+  components: {
+    message
+  },
   data () {
     return {
     }
@@ -16,7 +19,8 @@ export default {
     ...mapGetters({
       note: 'notes/note',
       name: 'notes/name',
-      content: 'notes/content'
+      content: 'notes/content',
+      message: 'notes/message'
     })
   },
   methods: {

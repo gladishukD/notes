@@ -8,6 +8,7 @@
             <textarea placeholder="content" :value="content" @input="updateAreaValue($event.target.value)" class="create-note__textarea"></textarea>
             <button type="button" v-on:click="pushData()" >submit data</button>
         </div>
+        <message v-show="message"></message>
     </div>
 </template>
 

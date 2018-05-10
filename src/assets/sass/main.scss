@@ -1,4 +1,6 @@
 html, body{
+  margin: 0;
+  padding: 0;
   //background: #0d3349;
 }
 .header{
@@ -118,4 +120,29 @@ h2{
     text-decoration: none;
     display: block;
   }
+}
+
+.coment{
+  border: 1px solid #0d3349;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  span{
+    font-size: 14px;
+    padding: 2.5px;
+  }
+}
+
+.message{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 50px;
+  border: 1px solid #dd0020;
+  background: aquamarine;
+  text-align: center;
+  padding: 15px;
 }
