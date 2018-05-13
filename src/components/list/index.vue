@@ -5,7 +5,7 @@
             <p><span>content:</span><br>{{temp.content}}</p>
             <div class="add-comment">
                 <label>comment:</label>
-                <input type="text" :value="author" @input="updateAutor($event.target.value)"  />
+                <input placeholder="author" type="text" :value="author" @input="updateAutor($event.target.value)"  />
                 <textarea placeholder="your comment" :value="content" @input="updateContent($event.target.value)" ></textarea>
                 <button type="button" v-on:click="save(key)">post comment</button>
             </div>

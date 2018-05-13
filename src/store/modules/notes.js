@@ -12,7 +12,8 @@ import {
   UPDATE_COMMENT_VALUE,
   UPDATE_AUTHOR_VALUE,
   SAVE_COMENT,
-  MESSAGE_STATUS
+  MESSAGE_STATUS,
+  CLEAR_STORE_COMMENT_VALUE
 
 } from '../mutation-types'
 
@@ -76,9 +77,6 @@ const mutations = {
     state.note.forEach((item, index) => {
       if (index == key) {
         state.currentEl = item
-      } else {
-        // console.log('2serch true item', item)
-        // console.log('2serch true index', index)
       }
     })
     Vue.set(state, 'content', state.currentEl.content)
@@ -90,11 +88,12 @@ const mutations = {
     state.note.forEach((item, index) => {
       if (index == key) {
         state.currentEl = item
-      } else {
-        // console.log('2serch true item', item)
-        // console.log('2serch true index', index)
       }
     })
+  },
+  [CLEAR_STORE_COMMENT_VALUE] (state) {
+    Vue.set(state.comment, 'author', null)
+    Vue.set(state.comment, 'content', null)
   }
 }
 
@@ -106,7 +105,7 @@ const actions = {
       'content': state.content,
       'coments': []
     }
-    if (state.note !== '' && state.content !== '') {
+    if (state.name !== '' && state.content !== '') {
       state.note.push(tempParams)
       console.log(state.note)
       let serialObj = JSON.stringify(state.note)
@@ -167,9 +166,6 @@ const actions = {
       state.note.forEach((item, index) => {
         if (index == key) {
           state.currentEl = item
-        } else {
-          // console.log('2serch true item', item)
-          // console.log('2serch true index', index)
         }
       })
       state.currentEl.coments.push(data)

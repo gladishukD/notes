@@ -6,7 +6,8 @@ import {
   GET_LIST_NOTES,
   DEL_ALL_NOTES,
   DEL_ITEM_NOTE,
-  SAVE_COMENT
+  SAVE_COMENT,
+  CLEAR_STORE_COMMENT_VALUE
 } from '@/store/mutation-types'
 
 export default {
@@ -33,7 +34,8 @@ export default {
   methods: {
     ...mapMutations('notes/', {
       updateAutor: UPDATE_AUTHOR_VALUE,
-      updateContent: UPDATE_COMMENT_VALUE
+      updateContent: UPDATE_COMMENT_VALUE,
+      clearCommentStore: CLEAR_STORE_COMMENT_VALUE
     }),
     ...mapActions('notes/', {
       fetch: GET_LIST_NOTES,
@@ -42,7 +44,10 @@ export default {
       saveComment: SAVE_COMENT
     }),
     save (value) {
+      this.author = null
+      this.content = null
       this.saveComment(value)
+      this.clearCommentStore()
     }
   }
 }
