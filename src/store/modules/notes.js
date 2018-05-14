@@ -160,6 +160,11 @@ const actions = {
     let serialObj = JSON.stringify(state.note)
     localStorage.setItem('note', serialObj)
     Vue.set(state, 'message_value', '')
+    Vue.set(state.currentEl, 'coments', null)
+    Vue.set(state.currentEl, 'content', null)
+    Vue.set(state.currentEl, 'name', null)
+    Vue.set(state, 'content', null)
+    Vue.set(state, 'name', null)
     commit(MESSAGE_STATUS, 'зміни збережені')
   },
   SAVE_COMENT ({state, commit}, payload) {
@@ -200,8 +205,8 @@ const actions = {
         Vue.set(state.comment, 'author', null)
         Vue.set(state.comment, 'content', null)
         Vue.set(state.currentEl, 'coments', null)
-        Vue.set(state.currentEl, 'content', null)
-        Vue.set(state.currentEl, 'name', null)
+        // Vue.set(state.currentEl, 'content', null)
+        // Vue.set(state.currentEl, 'name', null)
         commit(MESSAGE_STATUS, 'коментар відправлено')
       } else {
         commit(MESSAGE_STATUS, 'заповніть всі поля')
