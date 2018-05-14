@@ -7,10 +7,13 @@ import {
   GET_LIST_NOTES,
   SAVE_EDIT_NOTE
 } from '@/store/mutation-types'
+import message from '../message/index.vue'
 
 export default {
   name: 'edit-notes',
-  components: {},
+  components: {
+    message
+  },
   data () {
     return {
       id: this.$route.params.id
@@ -24,7 +27,8 @@ export default {
     ...mapGetters({
       note: 'notes/note',
       name: 'notes/name',
-      content: 'notes/content'
+      content: 'notes/content',
+      message: 'notes/message'
     })
   },
   methods: {

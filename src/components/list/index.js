@@ -9,6 +9,7 @@ import {
   SAVE_COMENT,
   CLEAR_STORE_COMMENT_VALUE
 } from '@/store/mutation-types'
+import { db } from '../../main'
 
 export default {
   name: 'list',
@@ -17,12 +18,15 @@ export default {
   },
   data () {
     return {
-      author: '',
-      content: ''
+      author: null,
+      content: null,
+      list: db.collection('note')
     }
   },
   mounted () {
     this.fetch()
+    console.log('hi', db.collection('note'))
+    console.log('hi', this.list)
   },
   computed: {
     ...mapGetters({

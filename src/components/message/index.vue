@@ -1,6 +1,6 @@
 <template>
     <div class="message">
-       <p>заповніть всі поля</p>
+        <p>{{message}}</p>
     </div>
 </template>
 

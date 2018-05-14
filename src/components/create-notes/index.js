@@ -5,7 +5,6 @@ import {
   UPDATE_AREA_VALUE,
   CREATE_ARRAY_NOTE
 } from '@/store/mutation-types'
-
 export default {
   name: 'create-notes',
   components: {
